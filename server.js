@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 const contactsRouter = require('./routes/contacts');
 const analyticsRouter = require('./routes/analytics');
+const servicesRouter = require('./routes/services');
 
 
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/contact', contactRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/contacts', contactsRouter);
 app.use('/api/analytics', analyticsRouter);
+app.use('/api/services', servicesRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

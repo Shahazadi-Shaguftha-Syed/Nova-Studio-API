@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
     const events = await db.collection('events').find().sort({ timestamp: -1 }).toArray();
     res.json(events);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Failed to fetch events' });
   }
 });
