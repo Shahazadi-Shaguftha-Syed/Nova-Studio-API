@@ -7,9 +7,11 @@ const servicesRouter = require('./routes/services');
 
 
 const app = express();
-
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://nova-studio-fe.vercel.app'
+  ],
 }));
 app.use(express.json());
 
